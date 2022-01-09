@@ -26,6 +26,8 @@ jobs:
           sh ${{ github.workspace }}/run.sh
       - name: Commit
         run: |
+          git config --global user.email "noreply@testnet.test"
+          git config --global user.name "noreply"
           git add .
           git commit -m "Auto-Commit $(date +"%y-%m-%d")"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
