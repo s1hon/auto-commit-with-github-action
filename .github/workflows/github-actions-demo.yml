@@ -19,6 +19,8 @@ jobs:
   Auto-Commit-Job:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Update File
         run: |
           sh ${{ github.workspace }}/run.sh
